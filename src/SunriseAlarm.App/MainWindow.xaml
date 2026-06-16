@@ -1,0 +1,45 @@
+<Window x:Class="SunriseAlarm.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sunrise Alarm" Height="440" Width="400"
+        Background="#171717" Foreground="#EDEDED" FontFamily="Segoe UI"
+        ResizeMode="CanMinimize">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Sunrise Alarm" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,20" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,14">
+            <TextBlock Text="Wake time" Width="130" VerticalAlignment="Center" />
+            <TextBox x:Name="WakeTimeBox" Width="90" Text="07:00" Padding="4" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,14">
+            <TextBlock Text="Ramp (minutes)" Width="130" VerticalAlignment="Center" />
+            <TextBox x:Name="RampBox" Width="90" Text="30" Padding="4" />
+        </StackPanel>
+
+        <CheckBox Grid.Row="3" x:Name="BrightnessToggle" Content="Gradual brightness"
+                  IsChecked="True" Margin="0,0,0,10" />
+        <CheckBox Grid.Row="4" x:Name="LoudnessToggle" Content="Gradual loudness"
+                  IsChecked="True" Margin="0,0,0,16" />
+
+        <TextBlock Grid.Row="5" x:Name="StatusText" Text="Not armed."
+                   VerticalAlignment="Top" TextWrapping="Wrap" Foreground="#9AA0A6" />
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="PreviewButton" Content="Preview" Width="96" Height="36"
+                    Margin="0,0,10,0" Click="PreviewButton_Click" />
+            <Button x:Name="ArmButton" Content="Arm alarm" Width="120" Height="36"
+                    Click="ArmButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

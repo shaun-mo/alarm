@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{00E2D1F0-C75E-4B7D-BF9C-2335D3229BB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunriseAlarm.Core", "src\SunriseAlarm.Core\SunriseAlarm.Core.csproj", "{C1EA2BA2-E443-4005-A1A3-88B94B79545D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunriseAlarm.App", "src\SunriseAlarm.App\SunriseAlarm.App.csproj", "{78A17E26-9D44-4D8E-B10B-1CAAD001A915}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DAC3BD62-988A-4778-A5A1-0C5B1E81145B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunriseAlarm.Core.Tests", "tests\SunriseAlarm.Core.Tests\SunriseAlarm.Core.Tests.csproj", "{5CCE556B-2A32-46EF-918C-F0AC2EF315A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1EA2BA2-E443-4005-A1A3-88B94B79545D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1EA2BA2-E443-4005-A1A3-88B94B79545D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1EA2BA2-E443-4005-A1A3-88B94B79545D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1EA2BA2-E443-4005-A1A3-88B94B79545D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A17E26-9D44-4D8E-B10B-1CAAD001A915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A17E26-9D44-4D8E-B10B-1CAAD001A915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A17E26-9D44-4D8E-B10B-1CAAD001A915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A17E26-9D44-4D8E-B10B-1CAAD001A915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCE556B-2A32-46EF-918C-F0AC2EF315A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCE556B-2A32-46EF-918C-F0AC2EF315A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCE556B-2A32-46EF-918C-F0AC2EF315A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCE556B-2A32-46EF-918C-F0AC2EF315A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1EA2BA2-E443-4005-A1A3-88B94B79545D} = {00E2D1F0-C75E-4B7D-BF9C-2335D3229BB8}
+		{78A17E26-9D44-4D8E-B10B-1CAAD001A915} = {00E2D1F0-C75E-4B7D-BF9C-2335D3229BB8}
+		{5CCE556B-2A32-46EF-918C-F0AC2EF315A1} = {DAC3BD62-988A-4778-A5A1-0C5B1E81145B}
+	EndGlobalSection
+EndGlobal
