@@ -13,15 +13,19 @@ public sealed class PowerGuard
     private const string TaskName = "SunriseAlarmWake";
 
     /// <summary>
-    /// Register (or replace) a wake task firing at <paramref name="rampStart"/>. The task's action
-    /// is a no-op; its only job is to bring the machine out of sleep so the running app can take over.
+    /// Register (or replace) a wake task firing at <paramref name="rampStart"/>. The task wakes the
+    /// machine and launches the app, so the ramp happens even if the app wasn't already running
+    /// (the app re-arms itself from saved settings, and single-instance keeps it to one copy).
     /// Returns false if the task could not be scheduled.
     /// </summary>
     public bool ScheduleWake(DateTimeOffset rampStart)
     {
+        string exe = Environment.ProcessPath ?? "";
+        if (string.IsNullOrEmpty(exe)) return false;
+
         string time = rampStart.ToLocalTime().ToString("HH:mm");
         string script =
-            "$action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/c exit'; " +
+            $"$action = New-ScheduledTaskAction -Execute '{exe}'; " +
             $"$trigger = New-ScheduledTaskTrigger -Once -At {time}; " +
             "$settings = New-ScheduledTaskSettingsSet -WakeToRun -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries; " +
             $"Register-ScheduledTask -TaskName '{TaskName}' -Action $action -Trigger $trigger -Settings $settings -Force";

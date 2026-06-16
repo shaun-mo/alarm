@@ -29,6 +29,36 @@ drives everything:
 - **Wake-from-sleep** — `PowerGuard` schedules a Windows wake timer so the PC comes out of
   sleep before the ramp. If that can't be scheduled, the app warns you to keep the PC awake.
 
+## Will it wake a sleeping PC?
+
+**Honestly: only if you don't let the PC fully sleep.** Many modern machines use
+*Modern Standby* (S0) instead of real sleep (S3) and hibernate after a few hours. A wake
+timer can't reliably light the screen from Modern Standby, and **can't wake a hibernated PC
+at all**. So relying on "let it sleep, the timer wakes it" is fragile.
+
+What this app does instead, for reliability:
+
+- **Keeps the PC awake while an alarm is armed** (`StayAwake` / `SetThreadExecutionState`).
+  The display can still turn off; the system stays on so the ramp can run and turn the
+  screen back on at wake time. This is the dependable path — best on a desktop left plugged in.
+- **Registers a `WakeToRun` task as a best-effort backup** that wakes the machine and launches
+  the app at ramp start (`PowerGuard`).
+- **Persists the armed alarm and re-arms on launch**, so a close, crash, or cold wake still
+  fires. A single-instance guard prevents duplicate windows.
+
+Practical guidance: leave the PC on (plugged in), let only the screen sleep, and don't manually
+hibernate — a manual sleep overrides the keep-awake lock.
+
+## Install
+
+Self-contained build (no .NET needed on the target PC):
+
+```sh
+dotnet publish src/SunriseAlarm.App -c Release -r win-x64 --self-contained true -o "%LOCALAPPDATA%\SunriseAlarm"
+```
+
+Then make a Desktop shortcut to `%LOCALAPPDATA%\SunriseAlarm\SunriseAlarm.exe`.
+
 ## Project layout
 
 | Project | What it is |

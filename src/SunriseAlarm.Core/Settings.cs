@@ -32,4 +32,7 @@ public sealed record Settings
 
     /// <summary>Whether the app launches with Windows.</summary>
     public bool LaunchOnStartup { get; init; } = false;
+
+    /// <summary>Whether an alarm is currently armed, so the app re-arms itself on next launch.</summary>
+    public bool Armed { get; init; } = false;
 }

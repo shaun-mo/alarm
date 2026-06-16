@@ -17,6 +17,7 @@
   <ItemGroup>
     <Content Include="Assets\**\*.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
 
