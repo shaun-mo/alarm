@@ -24,8 +24,8 @@ public sealed record Settings
     /// <summary>Upper bound on playback volume, 0..1.</summary>
     public double MaxVolume { get; init; } = 0.8;
 
-    /// <summary>Identifier of the selected bundled soundscape (e.g. "birds", "rain", "ocean").</summary>
-    public string Track { get; init; } = "birds";
+    /// <summary>Identifier of the selected bundled soundscape (e.g. "ocean", "rain").</summary>
+    public string Track { get; init; } = "ocean";
 
     /// <summary>Minutes added by each snooze.</summary>
     public int SnoozeMinutes { get; init; } = 9;

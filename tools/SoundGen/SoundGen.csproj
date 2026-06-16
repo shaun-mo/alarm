@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Standalone generator for the bundled soundscapes. Deliberately NOT part of
+       SunriseAlarm.sln so it never affects the app build.
+       Run it via: dotnet run (project tools/SoundGen) passing an output dir arg. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
